@@ -1,32 +1,88 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Hamz Dar’s architecture portfolio is in progress.">
-<meta name="theme-color" content="#e9edff">
-<title>Hamz Dar — In progress</title>
-<style>
-  * { box-sizing: border-box; }
-  body { margin: 0; background: #e9edff; color: #192451; }
-  main {
-    min-height: 100svh; padding: clamp(2rem, 6vh, 4rem) 1.25rem;
-    display: grid; align-content: center; justify-items: center; text-align: center;
-    background-image: linear-gradient(#27399c10 1px, transparent 1px),
-      linear-gradient(90deg, #27399c10 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-  h1 { font: 800 clamp(3.5rem, 12vw, 9rem)/.9 Arial, sans-serif; letter-spacing: -.085em; margin: 0; padding-right: .085em; }
-  canvas { width: min(100%, 34rem); height: auto; display: block; margin-block: 1.1rem .65rem; }
-  p { margin: 0; padding: .65em 1em; border: 1px solid; background: #fdfdfd; box-shadow: 3px 3px #192451; transform: rotate(-3deg); font: 700 1rem/1.2 ui-monospace, monospace; }
-</style>
-<script src="illustration.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An architecture portfolio by Hamz Dar.">
+  <meta name="color-scheme" content="dark light">
+  <title>Hamz Dar — Architecture Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css">
+  <script src="portfolio.js"></script>
 </head>
 <body>
-  <main>
-    <h1>Hamz Dar</h1>
-    <canvas width="1200" height="760" role="img" aria-label="A hard-hatted pigeon studies a blueprint of a building shaped like a giant slice of bread."></canvas>
-    <p>In progress</p>
+  <canvas class="sketch-trail" aria-hidden="true"></canvas>
+  <main class="portfolio">
+    <header class="intro">
+      <div class="topline">
+        <p>Architecture portfolio</p>
+        <fieldset class="theme-control" hidden>
+          <legend class="sr-only">Color theme</legend>
+          <label><input type="radio" name="theme" value="dark" checked><span>Dark</span></label>
+          <label><input type="radio" name="theme" value="light"><span>Light</span></label>
+        </fieldset>
+      </div>
+
+    </header>
+
+    <div class="name-row">
+      <h1>Hamz Dar</h1>
+      <a class="download" href="Hamz-Dar-Portfolio.pdf" download="Hamz Dar — Architecture Portfolio.pdf" aria-label="Download portfolio PDF">
+        <span class="download-icon" aria-hidden="true"></span>
+        <span class="download-label">Download portfolio</span>
+        <span class="download-short-label" aria-hidden="true">Portfolio</span>
+        <span class="file-type">PDF</span>
+      </a>
+    </div>
+
+    <div class="gallery" aria-label="Selected projects">
+      <figure class="project project-thesis" tabindex="0" aria-labelledby="thesis-title">
+        <div class="project-image"><img src="assets/murree.webp" alt="A model of the former Murree Brewery ruins and a proposed public courtyard" width="1520" height="592" fetchpriority="high"></div>
+        <figcaption id="thesis-title">(Alter)native approaches</figcaption>
+      </figure>
+      <figure class="project" tabindex="0" aria-labelledby="hillpark-title">
+        <div class="project-image"><img src="assets/hillpark.webp" alt="A low, glass-fronted café set into a wooded hillside" width="1245" height="767"></div>
+        <figcaption id="hillpark-title">Café at Hillpark</figcaption>
+      </figure>
+      <figure class="project" tabindex="0" aria-labelledby="murs-title">
+        <div class="project-image"><img src="assets/murs.webp" alt="A path of stepping stones through a planted clearing" loading="lazy" decoding="async"></div>
+        <figcaption id="murs-title">Murs à pêches</figcaption>
+      </figure>
+      <figure class="project" tabindex="0" aria-labelledby="raum-title">
+        <div class="project-image"><img src="assets/raum.webp" alt="A planted outdoor walkway beside a building with exposed steel trusses" loading="lazy" decoding="async"></div>
+        <figcaption id="raum-title">Raum für Alltag</figcaption>
+      </figure>
+      <figure class="project" tabindex="0" aria-labelledby="wallpaper-title">
+        <div class="project-image"><img src="assets/just-wallpaper.webp" alt="An architectural elevation of apartment façades with a glazed central bay" loading="lazy" decoding="async"></div>
+        <figcaption id="wallpaper-title">Just Wallpaper</figcaption>
+      </figure>
+      <figure class="project" tabindex="0" aria-labelledby="kunst-title">
+        <div class="project-image"><img src="assets/deine-gunst.webp" alt="A physical model of a small pavilion framed by bare trees" loading="lazy" decoding="async"></div>
+        <figcaption id="kunst-title">Deine Gunst der Kunst</figcaption>
+      </figure>
+      <figure class="project" tabindex="0" aria-labelledby="catalyst-title">
+        <div class="project-image"><img src="assets/studio-catalyst.webp" alt="An architectural perspective of a layered urban building alongside a street" loading="lazy" decoding="async"></div>
+        <figcaption id="catalyst-title">Studio Catalyst</figcaption>
+      </figure>
+      <figure class="project" tabindex="0" aria-labelledby="haus-title">
+        <div class="project-image"><img src="assets/haus-der-photographie.webp" alt="A view of the historic brick exhibition halls at the Deichtorhallen" loading="lazy" decoding="async"></div>
+        <figcaption id="haus-title">Haus der Photographie</figcaption>
+      </figure>
+    </div>
+    <footer class="closing" id="contact">
+      <figure class="portrait" tabindex="0">
+        <img src="assets/hamz-dar-color.webp" alt="Portrait of Hamz Dar" width="1200" height="900" loading="lazy">
+      </figure>
+      <div class="closing-copy">
+        <p class="thank-you" lang="de"><span>Danke fürs Vorbeischauen.</span></p>
+        <div class="contact">
+          <h2>Contact</h2>
+          <address>
+            <a href="mailto:hamz.dar@gmail.com">hamz.dar@gmail.com</a>
+            <a href="tel:+4917636823632">+49 176 3682 3632</a>
+          </address>
+        </div>
+      </div>
+    </footer>
   </main>
 </body>
 </html>
