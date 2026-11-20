@@ -1,4 +1,5 @@
 .detail figure { margin: 0; }
+.detail-return { margin-top: clamp(1rem, 2.2vw, 2rem); }
 
 .detail-back {
   display: inline-flex;
@@ -27,7 +28,7 @@
   grid-template-columns: minmax(0, 2.15fr) minmax(15rem, 1fr);
   align-items: end;
   gap: clamp(1rem, 3.4vw, 3.6rem);
-  padding-block: clamp(2.8rem, 6.25vw, 6.5rem) clamp(1.65rem, 3.9vw, 3.5rem);
+  padding-block: clamp(1.7rem, 4.65vw, 4.95rem) clamp(1.65rem, 3.9vw, 3.5rem);
 }
 
 .detail-label {

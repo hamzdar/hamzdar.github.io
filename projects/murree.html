@@ -1,90 +1,156 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="de" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The former Murree Brewery becomes a place for everyday community life. Lightweight additions bring the ruins back into use while keeping traces of the site’s history visible.">
+  <meta name="description" content="Die ehemalige Murree-Brauerei wird zu einem Ort für das gemeinschaftliche Leben im Alltag. Leichte Einbauten machen die Ruine wieder nutzbar und lassen die Spuren ihrer Geschichte sichtbar.">
   <meta name="color-scheme" content="dark light">
-  <title>(Alter)native approaches — Hamz Dar</title>
+  <title>(alter)native — Hamz Dar</title>
   <link rel="stylesheet" href="../portfolio.css">
   <link rel="stylesheet" href="../project.css">
+  <link rel="stylesheet" href="../thesis-book.css">
+  <script src="../thesis-book.js" defer></script>
   <link rel="preload" as="image" href="../assets/murree.webp">
+  <link rel="alternate" hreflang="de" href="./murree.html">
+  <link rel="alternate" hreflang="en" href="../en/projects/murree.html">
   <script src="../portfolio.js"></script>
 </head>
 <body data-project-page="murree">
-  <canvas class="sketch-trail" aria-hidden="true"></canvas>
-  <main class="portfolio detail">
-    <header class="topline detail-nav">
-      <a class="detail-back" href="../#project-murree"><span aria-hidden="true" class="back-tick"></span> All projects</a>
-      <fieldset class="theme-control" hidden>
-        <legend class="sr-only">Color theme</legend>
-        <label><input type="radio" name="theme" value="dark" checked><span>Dark</span></label>
-        <label><input type="radio" name="theme" value="light"><span>Light</span></label>
-      </fieldset>
+  <main class="portfolio detail" id="top">
+    <header class="site-header">
+      <div class="site-bar">
+        <a class="site-brand" href="../">Hamz Dar</a>
+        <div class="header-controls">
+          <nav class="language-control" aria-label="Sprache">
+            <a lang="de" hreflang="de" href="./murree.html" aria-label="Deutsch" aria-current="page">DE</a>
+            <a lang="en" hreflang="en" href="../en/projects/murree.html" aria-label="English">EN</a>
+          </nav>
+          <fieldset class="theme-control" hidden>
+            <legend class="sr-only">Farbschema</legend>
+            <label><input type="radio" name="theme" value="dark" checked><span>Dunkel</span></label>
+            <label><input type="radio" name="theme" value="light"><span>Hell</span></label>
+          </fieldset>
+          <a class="download" href="../Hamz-Dar-Portfolio.pdf" download="Hamz Dar — Architekturportfolio.pdf" aria-label="Portfolio als PDF herunterladen">
+            <span class="download-icon" aria-hidden="true"></span>
+            <span class="download-label">Portfolio herunterladen</span>
+            <span class="download-short-label" aria-hidden="true">Portfolio</span>
+            <span class="file-type">PDF</span>
+          </a>
+        </div>
+      </div>
     </header>
 
     <article aria-labelledby="project-title">
+      <a class="detail-back detail-return" href="../#project-murree"><span aria-hidden="true" class="back-tick"></span> Alle Projekte</a>
       <header class="detail-heading">
         <div>
-          <p class="detail-label">Master’s thesis · Adaptive reuse</p>
-          <h1 id="project-title">(Alter)native approaches</h1>
+          <p class="detail-label">Masterarbeit · Weiterbauen im Bestand</p>
+          <h1 id="project-title">(alter)native</h1>
         </div>
-        <p class="detail-intro">The former Murree Brewery becomes a place for everyday community life. Lightweight additions bring the ruins back into use while keeping traces of the site’s history visible.</p>
+        <p class="detail-intro">Die ehemalige Murree-Brauerei wird zu einem Ort für das gemeinschaftliche Leben im Alltag. Leichte Einbauten machen die Ruine wieder nutzbar und lassen die Spuren ihrer Geschichte sichtbar.</p>
       </header>
 
       <figure class="detail-cover">
         <div class="detail-cover-frame" data-transition-photo>
-          <img src="../assets/murree.webp" alt="Site model of the brewery ruins beside a new gathering space" fetchpriority="high">
+          <img src="../assets/murree.webp" alt="Geländemodell mit der Brauereiruine und einem neuen Treffpunkt" fetchpriority="high">
         </div>
-        <figcaption>Site model of the former Murree Brewery and proposed courtyard</figcaption>
+        <figcaption>Geländemodell der ehemaligen Murree-Brauerei mit geplantem Hof <a class="thesis-jump" href="#thesis-brochure">Broschüre ansehen</a></figcaption>
       </figure>
 
       <dl class="project-facts">
-        <div><dt>Location</dt><dd>Ghora Galli, Pakistan</dd></div>
-        <div><dt>Context</dt><dd>Hochschule München · M.Arch thesis</dd></div>
-        <div><dt>Term</dt><dd>Summer 2026</dd></div>
+        <div><dt>Ort</dt><dd>Ghora Galli, Pakistan</dd></div>
+        <div><dt>Kontext</dt><dd>Hochschule München · Masterarbeit Architektur</dd></div>
+        <div><dt>Semester</dt><dd>Sommersemester 2026</dd></div>
       </dl>
 
       <section class="story" aria-labelledby="drawing-title">
         <div class="story-heading">
-          <h2 id="drawing-title">The drawing</h2>
-          <p>The drawings show how the new structure meets the retained stone fabric.</p>
+          <h2 id="drawing-title">Die Zeichnung</h2>
+          <p>Die Zeichnungen zeigen, wie die neue Konstruktion an das erhaltene Steinmauerwerk anschließt.</p>
         </div>
         <figure class="drawing-figure">
           <a class="drawing-link" href="../assets/projects/murree-drawing.webp" data-drawing-link>
-            <img src="../assets/projects/murree-drawing.webp" alt="Exploded axonometric and construction section" width="1680" height="1431" loading="lazy" decoding="async">
-            <span class="drawing-control"><span aria-hidden="true">+</span> Enlarge drawing</span>
+            <img src="../assets/projects/murree-drawing.webp" alt="Explosionsaxonometrie und Konstruktionsschnitt" width="1680" height="1431" loading="lazy" decoding="async">
+            <span class="drawing-control"><span aria-hidden="true">+</span> Zeichnung vergrößern</span>
           </a>
-          <figcaption>Exploded axonometric and construction section</figcaption>
+          <figcaption>Explosionsaxonometrie und Konstruktionsschnitt</figcaption>
         </figure>
       </section>
 
       <section class="story story-space" aria-labelledby="space-title">
         <div class="story-heading">
-          <h2 id="space-title">The space</h2>
-          <p>A view through the stone arch shows how new circulation fits within the ruin.</p>
+          <h2 id="space-title">Der Raum</h2>
+          <p>Der Blick durch den Steinbogen zeigt, wie sich die neue Erschließung in die Ruine einfügt.</p>
         </div>
         <figure class="space-figure">
-          <img src="../assets/projects/murree-space.webp" alt="Interior rendering through the retained stone arch" width="1059" height="1550" loading="lazy" decoding="async">
-          <figcaption>Interior rendering through the retained stone arch</figcaption>
+          <img src="../assets/projects/murree-space.webp" alt="Innenraumvisualisierung mit Blick durch den erhaltenen Steinbogen" width="1059" height="1550" loading="lazy" decoding="async">
+          <figcaption>Innenraumvisualisierung mit Blick durch den erhaltenen Steinbogen</figcaption>
         </figure>
+      </section>
+      <section class="story thesis-book" id="thesis-brochure" aria-labelledby="thesis-book-title">
+        <div class="story-heading">
+          <h2 id="thesis-book-title">Broschüre</h2>
+        </div>
+        <div class="book-display">
+          <a class="book-cover-link" href="../assets/thesis-book/thesis-brochure.pdf" data-book-open>
+            <span class="book-object" aria-hidden="true">
+              <img src="../assets/thesis-book/page-01.webp" alt="" width="1324" height="1872" loading="lazy">
+            </span>
+            <span class="book-cover-label">Broschüre öffnen <span>48 Seiten</span></span>
+          </a>
+        </div>
       </section>
     </article>
 
-    <nav class="detail-footer" aria-label="Project navigation">
-      <a class="detail-back" href="../#project-murree"><span aria-hidden="true" class="back-tick"></span> All projects</a>
+    <nav class="detail-footer" aria-label="Projektnavigation">
+      <a class="detail-back" href="../#project-murree"><span aria-hidden="true" class="back-tick"></span> Alle Projekte</a>
       <a class="detail-next" href="hillpark.html">
-        <span class="detail-label">Next project</span>
+        <span class="detail-label">Nächstes Projekt</span>
         <span class="detail-next-title">Café at Hillpark <span aria-hidden="true" class="next-tick"></span></span>
       </a>
     </nav>
 
     <dialog class="drawing-dialog" aria-labelledby="drawing-dialog-label">
       <div class="drawing-dialog-bar">
-        <h2 id="drawing-dialog-label">Exploded axonometric and construction section</h2>
-        <form method="dialog"><button type="submit" aria-label="Close drawing" autofocus>×</button></form>
+        <h2 id="drawing-dialog-label">Explosionsaxonometrie und Konstruktionsschnitt</h2>
+        <form method="dialog"><button type="submit" aria-label="Zeichnung schließen" autofocus>×</button></form>
       </div>
-      <img alt="Exploded axonometric and construction section">
+      <img alt="Explosionsaxonometrie und Konstruktionsschnitt">
+    </dialog>
+    <dialog class="book-reader" aria-labelledby="book-reader-title">
+      <header class="book-toolbar">
+        <h2 id="book-reader-title">Broschüre</h2>
+        <form method="dialog">
+          <button class="book-close" type="submit" aria-label="Broschüre schließen" autofocus>×</button>
+        </form>
+      </header>
+      <div class="book-stage" data-book-stage>
+        <div class="book-spread" data-layout="single">
+          <img class="book-page" data-page-left alt="">
+          <img class="book-page" data-page-right alt="" hidden>
+          <div class="book-sheet" aria-hidden="true" hidden>
+            <img class="book-face book-front" alt="">
+            <img class="book-face book-reverse" alt="">
+          </div>
+          <button class="book-zone book-zone-left" type="button" data-book-step="-1" aria-label="Vorherige Seite" tabindex="-1"></button>
+          <button class="book-zone book-zone-right" type="button" data-book-step="1" aria-label="Nächste Seite" tabindex="-1"></button>
+        </div>
+      </div>
+      <footer class="book-toolbar book-toolbar-bottom">
+        <button class="book-step" type="button" data-book-step="-1" aria-label="Vorherige Seite"><span aria-hidden="true">‹</span> Zurück</button>
+        <p class="book-pagination" aria-live="polite" data-book-status>Seite 1 von 48</p>
+        <button class="book-step" type="button" data-book-step="1" aria-label="Nächste Seite"><span data-book-next-label>Weiter</span> <span aria-hidden="true">›</span></button>
+      </footer>
+      <div class="book-tools">
+        <form class="book-jump" data-book-jump>
+          <label for="book-page-number">Seite aufrufen</label>
+          <input id="book-page-number" name="page" type="number" inputmode="numeric" min="1" max="48" step="1" value="1" required>
+          <button class="book-tool-button" type="submit">Los</button>
+        </form>
+        <a class="book-tool-button book-download" href="../assets/thesis-book/thesis-brochure.pdf" download="Hamz Dar - Broschüre.pdf">
+          <span class="download-icon" aria-hidden="true"></span> Broschüre herunterladen
+        </a>
+      </div>
     </dialog>
   </main>
 </body>
