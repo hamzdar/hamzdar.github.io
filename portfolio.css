@@ -173,7 +173,29 @@ body { margin: 0; background: var(--background); color: var(--text); font-family
   gap: clamp(2rem, 4vw, 4rem) clamp(.95rem, 2.2vw, 2rem);
 }
 
-.project { margin: 0; min-width: 0; }
+@view-transition { navigation: auto; }
+
+::view-transition { background: var(--background); }
+::view-transition-group(root) { animation-duration: .49s; }
+::view-transition-old(root) { animation: leave-layout .15s ease-out both; }
+::view-transition-new(root) { animation: enter-layout .34s .15s ease-out both; }
+
+@keyframes leave-layout { to { opacity: 0; } }
+@keyframes enter-layout { from { opacity: 0; } }
+::view-transition-group(project-photo) {
+  animation-duration: .64s;
+  animation-timing-function: cubic-bezier(.22,.72,.24,1);
+}
+::view-transition-old(project-photo),
+::view-transition-new(project-photo) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project { margin: 0; min-width: 0; scroll-margin-top: 5rem; }
+.project-link { display: block; color: inherit; text-decoration: none; }
+.project-link figure { margin: 0; }
 .project-image { overflow: hidden; aspect-ratio: 8 / 5; background: var(--surface); }
 .project-image img {
   display: block;
@@ -192,7 +214,7 @@ body { margin: 0; background: var(--background); color: var(--text); font-family
   letter-spacing: -.025em;
   line-height: 1.25;
 }
-.project:focus-visible img { filter: grayscale(0); transform: scale(1.045); }
+.project-link:focus-visible img { filter: grayscale(0); transform: scale(1.045); }
 .sketch-trail {
   position: fixed;
   inset: 0;
@@ -311,8 +333,12 @@ body { margin: 0; background: var(--background); color: var(--text); font-family
   .gallery { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) { animation-duration: 0s; animation-delay: 0s; }
   .project-image img, .portrait img { transition: none !important; }
   .writing-ready .thank-you span,
   .writing-ready.is-visible .thank-you span { animation: none; clip-path: none; }
-  .project:focus-visible img, .project:hover img { transform: none; }
+  .project-link:focus-visible img, .project:hover img { transform: none; }
 }

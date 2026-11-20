@@ -1,0 +1,225 @@
+.detail figure { margin: 0; }
+
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  width: fit-content;
+  color: var(--text);
+  font-size: .91rem;
+  text-decoration: none;
+}
+
+.detail-back:hover, .detail-next:hover .detail-next-title { text-decoration: underline; text-underline-offset: .22em; }
+.back-tick, .next-tick {
+  display: inline-block;
+  flex: none;
+  width: .46rem;
+  height: .46rem;
+  border: solid currentColor;
+  border-width: 0 0 1px 1px;
+  transform: rotate(45deg);
+}
+.next-tick { transform: rotate(225deg); }
+
+.detail-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 2.15fr) minmax(15rem, 1fr);
+  align-items: end;
+  gap: clamp(1rem, 3.4vw, 3.6rem);
+  padding-block: clamp(2.8rem, 6.25vw, 6.5rem) clamp(1.65rem, 3.9vw, 3.5rem);
+}
+
+.detail-label {
+  margin: 0;
+  color: var(--muted);
+  font: 400 .84rem/1.45 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .085em;
+}
+
+.detail-heading h1 {
+  margin: .65rem 0 0 -.055em;
+  font-size: clamp(3.45rem, 8.15vw, 8rem);
+  font-weight: 500;
+  line-height: .88;
+  letter-spacing: -.079em;
+  text-wrap: balance;
+}
+
+.detail-intro, .story-heading p {
+  max-width: 38ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+  line-height: 1.52;
+}
+
+.detail-cover-frame {
+  overflow: hidden;
+  aspect-ratio: 2.05;
+  max-height: 41rem;
+  background: var(--surface);
+}
+
+.detail-cover-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--hero-position, center);
+}
+
+[data-project-page="murree"] { --hero-position: 55% 65%; }
+[data-project-page="hillpark"] { --hero-position: 50% 56%; }
+[data-project-page="murs"] { --hero-position: 50% 58%; }
+
+.detail figure figcaption {
+  padding-block: .76rem .15rem;
+  color: var(--muted);
+  font: .85rem/1.45 var(--sans);
+}
+
+.project-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 1.25rem 2rem;
+  margin: 1.35rem 0 0;
+  padding-block: 1.15rem;
+  border-block: 1px solid var(--line);
+}
+
+.project-facts dt {
+  margin-bottom: .32rem;
+  color: var(--muted);
+  font: .77rem/1.4 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+.project-facts dd { margin: 0; font-size: .97rem; line-height: 1.4; }
+
+.story {
+  display: grid;
+  grid-template-columns: minmax(11rem, .72fr) minmax(0, 2fr);
+  gap: clamp(1.4rem, 5vw, 5rem);
+  align-items: start;
+  padding-block: clamp(3.3rem, 8.2vw, 8rem);
+  border-bottom: 1px solid var(--line);
+}
+.story-heading h2 {
+  margin: .05rem 0 .82rem;
+  font: 400 clamp(2.25rem, 4.55vw, 4.7rem)/.99 "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  letter-spacing: -.05em;
+}
+
+.drawing-link {
+  position: relative;
+  display: block;
+  color: var(--action-text);
+  background: #e8e4d9;
+  padding: clamp(.6rem, 1.8vw, 1.5rem);
+}
+
+.drawing-link img, .space-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 45rem;
+  object-fit: contain;
+}
+.space-figure img { background: var(--surface); }
+
+.drawing-control {
+  position: absolute;
+  right: .65rem;
+  bottom: .65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  min-height: 2.75rem;
+  padding: .4rem .65rem;
+  color: #28251e;
+  background: #f7f3e9;
+  border: 1px solid #332b233d;
+  font: 600 .84rem var(--sans);
+}
+.drawing-control span { font-size: 1.1rem; }
+.drawing-link:hover .drawing-control { background: #fffdf7; }
+
+.detail-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: end;
+  padding-block: clamp(2rem, 5vw, 4.25rem) .8rem;
+}
+.detail-next { display: grid; gap: .3rem; text-align: right; color: var(--text); text-decoration: none; }
+.detail-next-title { font-size: clamp(1.05rem, 2.2vw, 1.8rem); }
+.detail-next-title .next-tick { margin: 0 .25rem .2em .45rem; }
+
+.drawing-dialog {
+  width: min(75rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  padding: clamp(.7rem, 2vw, 1.75rem);
+  border: 1px solid var(--line);
+  background: var(--background);
+  color: var(--text);
+}
+.drawing-dialog::backdrop { background: #111111bd; }
+.drawing-dialog-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: .7rem; }
+.drawing-dialog h2 { margin: 0; font-size: 1rem; font-weight: 500; line-height: 1.4; }
+.drawing-dialog button {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: var(--background);
+  font: 1.45rem var(--sans);
+  cursor: pointer;
+}
+.drawing-dialog img {
+  display: block;
+  width: 100%;
+  max-height: calc(100dvh - 8rem);
+  object-fit: contain;
+  background: #e8e4d9;
+}
+
+@media (max-width: 740px) {
+  .detail-heading, .story { grid-template-columns: 1fr; }
+  .detail-heading h1 { text-wrap: initial; }
+  .detail-cover-frame { aspect-ratio: 1.48; }
+  .story { padding-block: 3.3rem; }
+}
+@media (max-width: 390px) {
+  .detail-heading h1 { font-size: clamp(2.95rem, 12.7vw, 3.45rem); }
+  .detail-footer { align-items: start; flex-direction: column; }
+  .detail-next { text-align: left; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .detail-heading {
+    position: relative;
+    animation: enter-project .52s cubic-bezier(.22,.72,.24,1) both;
+  }
+  .detail-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: clamp(.55rem, 1.4vw, 1.3rem);
+    width: clamp(2rem, 8vw, 7rem);
+    height: 1px;
+    background: var(--muted);
+    transform-origin: left;
+    animation: draw-rule .66s .1s cubic-bezier(.22,.72,.24,1) both;
+  }
+}
+
+@keyframes enter-project {
+  from { opacity: .65; transform: translateY(.38rem); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes draw-rule {
+  from { opacity: 0; transform: scaleX(0); }
+  to { opacity: .8; transform: none; }
+}

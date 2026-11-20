@@ -9,12 +9,42 @@ try {
 }
 page.dataset.theme = theme;
 
+window.addEventListener('pageswap', (event) => {
+  connectProjectPhoto(event.viewTransition, event.activation?.entry?.url);
+});
+window.addEventListener('pagereveal', (event) => {
+  connectProjectPhoto(event.viewTransition, window.navigation?.activation?.from?.url);
+});
+
+function connectProjectPhoto(transition, otherPage) {
+  if (!transition || !otherPage || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const target = new URL(otherPage);
+  if (target.origin !== location.origin) return;
+
+  const slug = target.pathname.match(/\/projects\/([a-z-]+)\.html$/)?.[1];
+  const currentProject = document.body.dataset.projectPage;
+  const photo = currentProject && !slug
+    ? document.querySelector('[data-transition-photo]')
+    : !currentProject && slug
+      ? document.querySelector(`[data-project-link="${slug}"] .project-image`)
+      : null;
+  if (!photo) return;
+
+  const bounds = photo.getBoundingClientRect();
+  if (bounds.bottom <= 0 || bounds.top >= window.innerHeight) return;
+
+  photo.style.viewTransitionName = 'project-photo';
+  const reset = () => photo.style.removeProperty('view-transition-name');
+  transition.finished.then(reset, reset);
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   const control = document.querySelector('.theme-control');
   control.querySelector(`[value="${theme}"]`).checked = true;
   control.hidden = false;
-  installMasthead();
-  installClosingMessage();
+  if (document.querySelector('.name-row')) installMasthead();
+  if (document.querySelector('.closing')) installClosingMessage();
+  if (document.querySelector('.drawing-dialog')) installDrawingViewer();
   enableSketchTrail();
 
   control.addEventListener('change', ({ target }) => {
@@ -165,4 +195,18 @@ function installClosingMessage() {
 
   closing.classList.add('writing-ready');
   observer.observe(portrait);
+}
+
+function installDrawingViewer() {
+  const dialog = document.querySelector('.drawing-dialog');
+  if (typeof dialog.showModal !== 'function') return;
+
+  const link = document.querySelector('[data-drawing-link]');
+  link.setAttribute('aria-haspopup', 'dialog');
+  link.addEventListener('click', (event) => {
+    if (event.button || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    dialog.querySelector('img').src = link.href;
+    dialog.showModal();
+  });
 }
