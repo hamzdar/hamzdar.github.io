@@ -160,37 +160,12 @@ function installResumeTimeline() {
   window.addEventListener('resize', arrangeLabels);
   document.fonts?.ready.then(arrangeLabels);
 
-  const playback = timeline.closest('.resume').querySelector('[data-resume-replay]');
-  const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  let frame = 0;
-  let armed = true;
-
-  function play() {
-    cancelAnimationFrame(frame);
-    timeline.classList.add('resume-ready');
-    timeline.classList.remove('is-playing');
-    frame = requestAnimationFrame(() => {
-      frame = requestAnimationFrame(() => timeline.classList.add('is-playing'));
-    });
-  }
-
-  playback.hidden = false;
-  playback.addEventListener('click', play);
-
-  motion.addEventListener('change', () => {
-    if (!motion.matches) return;
-    cancelAnimationFrame(frame);
-    timeline.classList.remove('is-playing', 'resume-ready');
-  });
-
-  if (!('IntersectionObserver' in window)) return;
-  if (!motion.matches) timeline.classList.add('resume-ready');
-
-  const stage = new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) armed = true;
-    if (entry.intersectionRatio < .18 || !armed || motion.matches) return;
-    armed = false;
-    play();
-  }, { rootMargin: '-52px 0px 0px', threshold: [0, .18] });
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  timeline.classList.add('resume-motion');
+  const stage = new IntersectionObserver(([entry], observer) => {
+    if (!entry.isIntersecting) return;
+    timeline.classList.add('is-visible');
+    observer.disconnect();
+  }, { threshold: .18 });
   stage.observe(timeline);
 }
